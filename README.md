@@ -53,7 +53,7 @@ For authentication or connecting to a non-standard MongoDB instance.
 
 **Add a plugin-conf.d/mongo**
     [mongo_*]
-    env.MONGOURI mongdb://user:password@host:port
+    env.MONGOURI mongodb://user:password@host:port
 
 Reserved characters like `:`, `/`, `+` and `@` must be escaped following RFC 2396.
 Also see [plugin-conf.d - Munin](http://munin-monitoring.org/wiki/plugin-conf.d).

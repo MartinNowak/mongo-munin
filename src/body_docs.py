@@ -1,18 +1,3 @@
-#!/usr/bin/env python
-
-## GENERATED FILE - DO NOT EDIT
-
-import urllib2
-import sys
-import os
-import pymongo
-
-def getServerStatus():
-    if 'MONGOURI' in os.environ:
-        c = pymongo.MongoClient(os.environ['MONGOURI'])
-    else:
-        c = pymongo.MongoClient()
-    return c.admin.command('serverStatus', workingSet=True)
 
 name = "documents"
 
@@ -40,8 +25,3 @@ def doConfig():
 
 
 
-
-if len(sys.argv) > 1 and sys.argv[1] == "config":
-    doConfig()
-else:
-    doData()
