@@ -4,12 +4,13 @@ Munin Plugins for MongoDB
 
 Plugins
 ----------
-* mongo_ops   : operations/second
-* mongo_mem   : mapped, virtual and resident memory usage
 * mongo_btree : btree access/misses/etc...
 * mongo_conn  : current connections
-* mongo_lock  : write lock info
 * mongo_docs  : number of documents (inserted, updated...)
+* mongo_lock  : write lock info
+* mongo_mem   : mapped, virtual and resident memory usage
+* mongo_ops   : operations/second
+* mongo_repl  : replication lag
 
 Requirements
 -----------
@@ -31,10 +32,11 @@ Installation (ubuntu)
     sudo cp /tmp/mongo-munin/mongo_* /usr/share/munin/plugins
     sudo ln -sf /usr/share/munin/plugins/mongo_btree /etc/munin/plugins/mongo_btree
     sudo ln -sf /usr/share/munin/plugins/mongo_conn /etc/munin/plugins/mongo_conn
+    sudo ln -sf /usr/share/munin/plugins/mongo_docs /etc/munin/plugins/mongo_docs
     sudo ln -sf /usr/share/munin/plugins/mongo_lock /etc/munin/plugins/mongo_lock
     sudo ln -sf /usr/share/munin/plugins/mongo_mem /etc/munin/plugins/mongo_mem
     sudo ln -sf /usr/share/munin/plugins/mongo_ops /etc/munin/plugins/mongo_ops
-    sudo ln -sf /usr/share/munin/plugins/mongo_docs /etc/munin/plugins/mongo_docs
+    sudo ln -sf /usr/share/munin/plugins/mongo_repl /etc/munin/plugins/mongo_repl
     sudo chmod +x /usr/share/munin/plugins/mongo_*
     sudo service munin-node restart
 

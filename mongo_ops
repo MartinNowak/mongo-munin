@@ -10,12 +10,15 @@ import re
 
 instance = ""
 
-def getServerStatus():
+def getConn():
     if 'MONGOURI' in os.environ:
         c = pymongo.MongoClient(os.environ['MONGOURI'])
     else:
         c = pymongo.MongoClient()
-    return c.admin.command('serverStatus', workingSet=True)
+    return c
+
+def getServerStatus():
+    return getConn().admin.command('serverStatus', workingSet=True)
 
 
 def doData():
