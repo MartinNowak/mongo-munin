@@ -2,10 +2,11 @@
 name = "locked"
 
 def doData():
+    print "multigraph mongo_lock"+instance
     print name + ".value " + str( 100 * (getServerStatus()["globalLock"]["lockTime"]/getServerStatus()["globalLock"]["totalTime"]) )
 
 def doConfig():
-
+    print "multigraph mongo_lock"+instance
     print "graph_title MongoDB global write lock percentage"
     print "graph_args --base 1000 -l 0 "
     print "graph_vlabel percentage"

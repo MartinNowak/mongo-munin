@@ -57,3 +57,20 @@ For authentication or connecting to a non-standard MongoDB instance.
 
 Reserved characters like `:`, `/`, `+` and `@` must be escaped following RFC 2396.
 Also see [plugin-conf.d - Munin](http://munin-monitoring.org/wiki/plugin-conf.d).
+
+Multiple MongoDB Instances
+------------
+
+The scripts support multigraphs for multiple MongoDB instances.
+To use this, create one symlink for each instance,
+
+    sudo ln -sf /usr/share/munin/plugins/mongo_rs0_btree /etc/munin/plugins/mongo_btree
+    sudo ln -sf /usr/share/munin/plugins/mongo_rs1_btree /etc/munin/plugins/mongo_btree
+
+and configure the URIs.
+
+    [mongo_rs0_*]
+    env.MONGOURI mongodb://user:password@host:port
+
+    [mongo_rs1_*]
+    env.MONGOURI mongodb://user:password@host:port

@@ -3,11 +3,12 @@ def get():
     return getServerStatus()["indexCounters"]
 
 def doData():
+    print "multigraph mongo_btree"+instance
     for k,v in get().iteritems():
         print( str(k) + ".value " + str(int(v)) )
 
 def doConfig():
-
+    print "multigraph mongo_btree"+instance
     print "graph_title MongoDB btree stats"
     print "graph_args --base 1000 -l 0"
     print "graph_vlabel mb ${graph_period}"
