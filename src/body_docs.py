@@ -17,7 +17,7 @@ def doConfig():
     for k in getServerStatus()["metrics"]["document"]:
         print k + ".label " + k
         print k + ".min 0"
-        print k + ".type COUNTER"
+        print k + ".type GAUGE"
         print k + ".max 500000"
         print k + ".draw LINE1"
 
